@@ -212,6 +212,11 @@ class ResultPanel(QWidget):
         buttons_layout.addLayout(solution_buttons)
         metrics_panel.addLayout(buttons_layout)
         
+        # Add a label to show the current displayed solution
+        self.displayed_solution_label = QLabel("Đang hiển thị: N/A")
+        self.displayed_solution_label.setStyleSheet("font-style: italic; color: #555; margin-top: 5px;")
+        metrics_panel.addWidget(self.displayed_solution_label)
+        
         # Add metrics panel to left side of top layout
         top_layout.addLayout(metrics_panel, 1)
         
@@ -219,7 +224,7 @@ class ResultPanel(QWidget):
         results_panel = QVBoxLayout()
         
         # Biểu đồ fitness
-        self.figure = Figure(figsize=(4, 2))
+        self.figure = Figure(figsize=(4, 2.5))
         self.canvas = FigureCanvas(self.figure)
         results_panel.addWidget(self.canvas)
 
@@ -233,7 +238,7 @@ class ResultPanel(QWidget):
         self.table.setHorizontalHeaderLabels(["Fitness", "Flow từ nguồn", "Flow vào đích"])
         self.table.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
         self.table.setAlternatingRowColors(True)
-        self.table.setMaximumHeight(150)  # Giới hạn chiều cao của bảng
+        self.table.setMaximumHeight(250)  # Giới hạn chiều cao của bảng
         self.table.setStyleSheet("""
             QTableWidget {
                 border: 1px solid #bdc3c7;
@@ -272,6 +277,8 @@ class ResultPanel(QWidget):
             self.sink_node = sink
             self.ga_solution = best_solution
             self.compare_button.setEnabled(True)
+            self.show_ga_button.setEnabled(True) # Enable show GA button when GA results are available
+            self.displayed_solution_label.setText("Đang hiển thị: GA") # Update status
         
         # Cập nhật các metrics
         if metrics:
@@ -385,8 +392,10 @@ class ResultPanel(QWidget):
         """Hiển thị lời giải của Ford-Fulkerson trên đồ thị"""
         if self.graph_editor and self.ff_solution:
             self.graph_editor.display_flow(self.ff_solution)
+            self.displayed_solution_label.setText("Đang hiển thị: Ford-Fulkerson")
             
     def display_ga_solution(self):
         """Hiển thị lại lời giải của GA trên đồ thị"""
         if self.graph_editor and self.ga_solution:
             self.graph_editor.display_flow(self.ga_solution)
+            self.displayed_solution_label.setText("Đang hiển thị: GA")

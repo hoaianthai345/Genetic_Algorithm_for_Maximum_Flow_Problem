@@ -145,50 +145,51 @@ class ControlPanel(QWidget):
     def init_ui(self):
         layout = QVBoxLayout()
         form_layout = QFormLayout()
+        form_layout.setLabelAlignment(Qt.AlignLeft)
 
         # Các tham số GA
         self.pop_size_spin = QSpinBox()
         self.pop_size_spin.setRange(2, 200)
         self.pop_size_spin.setValue(30)
-        form_layout.addRow("Population Size:", self.pop_size_spin)
+        form_layout.addRow("Kích thước quần thể (Population Size):", self.pop_size_spin)
 
         self.max_gen_spin = QSpinBox()
         self.max_gen_spin.setRange(1, 1000)
         self.max_gen_spin.setValue(100)
-        form_layout.addRow("Max Generations:", self.max_gen_spin)
+        form_layout.addRow("Số thế hệ (Max Generations):", self.max_gen_spin)
 
         self.mutation_rate_spin = QDoubleSpinBox()
         self.mutation_rate_spin.setDecimals(3)
         self.mutation_rate_spin.setRange(0.001, 1.0)
         self.mutation_rate_spin.setSingleStep(0.01)
         self.mutation_rate_spin.setValue(0.03)
-        form_layout.addRow("Mutation Rate:", self.mutation_rate_spin)
+        form_layout.addRow("Tỷ lệ đột biến (Mutation Rate):", self.mutation_rate_spin)
 
         self.crossover_rate_spin = QDoubleSpinBox()
         self.crossover_rate_spin.setDecimals(2)
         self.crossover_rate_spin.setRange(0.1, 1.0)
         self.crossover_rate_spin.setSingleStep(0.05)
         self.crossover_rate_spin.setValue(0.8)
-        form_layout.addRow("Crossover Rate:", self.crossover_rate_spin)
+        form_layout.addRow("Tỷ lệ lai ghép (Crossover Rate):", self.crossover_rate_spin)
         
         self.top_k_spin = QSpinBox()
         self.top_k_spin.setRange(1, 10)
         self.top_k_spin.setValue(3)
-        form_layout.addRow("Elitism (Top-K):", self.top_k_spin)
+        form_layout.addRow("Số cá thể giữ lại (Elitism (Top-K)):", self.top_k_spin)
         
         self.paths_crossover_spin = QSpinBox()
         self.paths_crossover_spin.setRange(1, 5)
         self.paths_crossover_spin.setValue(2)
-        form_layout.addRow("Max Paths Crossover:", self.paths_crossover_spin)
+        form_layout.addRow("Số đường đi lai ghép (Max Paths Crossover):", self.paths_crossover_spin)
         
         self.tournament_size_spin = QSpinBox()
         self.tournament_size_spin.setRange(2, 10)
         self.tournament_size_spin.setValue(3)
-        form_layout.addRow("Tournament Size:", self.tournament_size_spin)
+        form_layout.addRow("Kích thước đấu chọn (Tournament Size):", self.tournament_size_spin)
         
         self.adaptive_mutation_check = QCheckBox()
         self.adaptive_mutation_check.setChecked(True)
-        form_layout.addRow("Adaptive Mutation:", self.adaptive_mutation_check)
+        form_layout.addRow("Đột biến thích nghi (Adaptive Mutation):", self.adaptive_mutation_check)
 
         layout.addLayout(form_layout)
 
