@@ -15,7 +15,7 @@
 
 1. Clone repository:
 ```bash
-git clone https://github.com/username/ga-maxflow.git
+git clone https://github.com/hoaianthai345/Genetic_Algorithm_for_Maximum_Flow_Problem.git
 cd ga-maxflow
 ```
 
