@@ -434,14 +434,6 @@ class GASolver:
             
             # Cập nhật quần thể
             population = new_population[:self.pop_size]
-            
-            # Định kỳ bổ sung cá thể mới để duy trì đa dạng (diversity maintenance)
-            if generation % max(1, self.generations // 10) == 0 and generation > 0:
-                num_fresh = max(1, self.pop_size // 20)  # Thay thế 5% quần thể
-                for i in range(num_fresh):
-                    if len(population) > i:
-                        # Thay thế cá thể kém nhất bằng cá thể mới
-                        population[-(i+1)] = self.initialize_diverse_individual(0.7)
 
         # Đảm bảo trả về ít nhất một cá thể khi top_solutions rỗng
         if not top_solutions and best_solution is not None:

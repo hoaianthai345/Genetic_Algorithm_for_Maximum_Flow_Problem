@@ -342,7 +342,7 @@ class GraphEditor(QWidget):
 
         # Tạo cạnh từ source đến lớp đầu tiên
         for node in layers[0]:
-            if random.random() < edge_prob + 0.3:
+            if random.random() < edge_prob + 0.5:
                 self.edges[(source_id, node)] = random.randint(10, 30)
                 self.edge_flows[(source_id, node)] = 0
 
@@ -356,7 +356,7 @@ class GraphEditor(QWidget):
 
         # Tạo cạnh từ lớp cuối đến sink
         for node in layers[-1]:
-            if random.random() < edge_prob + 0.3:
+            if random.random() < edge_prob + 0.5:
                 self.edges[(node, sink_id)] = random.randint(10, 30)
                 self.edge_flows[(node, sink_id)] = 0
 
