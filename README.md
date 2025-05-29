@@ -1,4 +1,4 @@
-# Maximum Flow Solver using Genetic Algorithm
+<img width="855" alt="result" src="https://github.com/user-attachments/assets/ea3802ed-22f3-46b6-98a8-24fd0d00866b" /># Maximum Flow Solver using Genetic Algorithm
 
 This is a final project for the Artificial Intelligence course at UEH, implementing a Genetic Algorithm (GA) to solve the Maximum Network Flow problem. The system includes a custom visualization interface, parameter controls, and comparative analysis with Ford–Fulkerson algorithm.
 
@@ -18,3 +18,4 @@ This is a final project for the Artificial Intelligence course at UEH, implement
 git clone https://github.com/<your-username>/maximum-flow-ga.git](https://github.com/hoaianthai345/Genetic_Algorithm_for_Maximum_Flow_Problem.git
 pip install -r requirements.txt
 python main.py
+<img width="855" alt="result" src="https://github.com/user-attachments/assets/22138f0e-51e2-47fa-98fe-e268e205f508" />
