@@ -6,7 +6,8 @@ This is a final project for the Artificial Intelligence course at UEH, implement
 - 👨‍💻 Technologies: Python, PyQt, GA, Graph Theory
 - 📁 Report: [`AI-Final-Report-Vietnamese.pdf`]
 
-<img width="855" alt="result" src="https://github.com/user-attachments/assets/ea3802ed-22f3-46b6-98a8-24fd0d00866b" /># Maximum Flow Solver using Genetic Algorithm
+<img width="855" alt="result" src="https://github.com/user-attachments/assets/ea3802ed-22f3-46b6-98a8-24fd0d00866b" />
+
 ## Features
 - Interactive graph editor with source/sink
 - Parameter control for population, crossover, mutation
