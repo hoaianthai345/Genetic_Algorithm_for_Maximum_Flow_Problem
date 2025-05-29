@@ -1,55 +1,23 @@
-# GA Maximum Flow Solver
+# Maximum Flow Solver using Genetic Algorithm
 
-Ứng dụng giải bài toán luồng cực đại (maximum flow problem) sử dụng thuật toán di truyền (Genetic Algorithm).
+This is a final project for the Artificial Intelligence course at UEH, implementing a Genetic Algorithm (GA) to solve the Maximum Network Flow problem. The system includes a custom visualization interface, parameter controls, and comparative analysis with Ford–Fulkerson algorithm.
 
-## Tính năng
+- 🧠 Topic: AI Optimization using Evolutionary Techniques
+- 📍 Course: Artificial Intelligence – UEH (25D1INF50904201)
+- 👨‍🏫 Instructor: Dr. Đặng Ngọc Hoàng Thành
+- 👨‍💻 Technologies: Python, PyQt, GA, Graph Theory
+- 📁 Report: [`AI-Final-Report-Vietnamese.pdf`]
+- 🔗 Live demo or screenshots: (optional)
 
-- Tạo đồ thị luồng có hướng với giao diện đồ họa
-- Tạo đồ thị ngẫu nhiên với số lượng lớp và nút tùy chọn
-- Giải quyết vấn đề luồng cực đại bằng thuật toán di truyền
-- Trực quan hóa kết quả và theo dõi quá trình tiến hóa
-- Hiển thị top 5 giải pháp tốt nhất
-- Cơ chế đột biến thích nghi để thoát khỏi tối ưu cục bộ
+## Features
+- Interactive graph editor with source/sink
+- Parameter control for population, crossover, mutation
+- Real-time fitness visualization
+- Side-by-side comparison with Ford–Fulkerson
 
-## Cài đặt
-
-1. Clone repository:
+## How to Run
 ```bash
-git clone https://github.com/hoaianthai345/Genetic_Algorithm_for_Maximum_Flow_Problem.git
-cd ga-maxflow
-```
-
-2. Cài đặt các thư viện phụ thuộc:
-```bash
+git clone https://github.com/<your-username>/maximum-flow-ga.git
+cd maximum-flow-ga
 pip install -r requirements.txt
-```
-
-## Sử dụng
-
-1. Chạy ứng dụng:
-```bash
 python main.py
-```
-
-2. Sử dụng giao diện để:
-   - Tạo đồ thị mới bằng cách thêm nút và cạnh
-   - Tạo đồ thị ngẫu nhiên với các tham số tùy chỉnh
-   - Thiết lập tham số cho thuật toán di truyền
-   - Chạy thuật toán và xem kết quả
-
-## Cấu trúc dự án
-
-- `main.py`: Điểm khởi đầu của ứng dụng
-- `logic/ga_solver.py`: Thuật toán di truyền để giải bài toán luồng cực đại
-- `ui/`: Các thành phần giao diện người dùng
-  - `main_window.py`: Cửa sổ chính của ứng dụng
-  - `graph_editor.py`: Trình soạn thảo đồ thị tương tác
-  - `control_panel.py`: Bảng điều khiển với các tham số thuật toán
-  - `result_panel.py`: Hiển thị kết quả và biểu đồ
-
-## Thuật toán di truyền
-
-- **Biểu diễn cá thể**: Từ điển `{(u,v): flow_value}` ánh xạ mỗi cạnh với giá trị luồng
-- **Đột biến thích nghi**: Tự động điều chỉnh tỷ lệ đột biến dựa trên quá trình hội tụ
-- **Lai ghép dựa trên đường đi**: Kết hợp các đường tăng luồng từ hai cá thể cha mẹ
-- **Bảo toàn luồng**: Đảm bảo luồng vào = luồng ra tại mỗi nút trung gian 
